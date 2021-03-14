@@ -1,0 +1,58 @@
+<head>
+    <meta charset="UTF-8">
+    <title>正在付款</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/pay.css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/layui.js"></script>
+</head>
+
+<body>
+    <div style="max-width: 600px;margin: auto;height:100%">
+        <div class='area'>
+            <div class="ticket-bd"></div>
+            <h1 id="t">请打开支付宝扫一扫二维码</h1>
+            <img src="alipay.png">
+            <h2>需支付金额￥{$result['price']}</h2>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150×150&data={$result['qr_code']}" style="border: 1px solid black;width:200px" alt="支付宝二维码加载中....">
+            <p id="state"></p>
+            <p style="margin:20px;" id="m">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">如果在手机微信，请截图保存到手机相册，打开支付宝“扫一扫”付款</font>
+                </font>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+layui.use('layer', function() {
+    layer = layui.layer
+
+    function check(out_trade_no) {
+        timer = setInterval(function() {
+            $.ajax({
+                type: 'post',
+                url: '/state',
+                data: {
+                    out_trade_no: out_trade_no,
+                },
+                success: function(state) {
+                    if (state === '已付款') {
+                        clearInterval(timer)
+                        window.location.href = '/back?out_trade_no=' + out_trade_no;
+                    } else {
+                        console.log(state);
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest);
+                }
+            });
+        }, 3000);
+    }
+    check('{$result["out_trade_no"]}')
+})
+</script>

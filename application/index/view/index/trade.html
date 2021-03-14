@@ -1,0 +1,100 @@
+{include file="layout/head"}
+<body>
+   {include file="layout/header"}
+    <div class="am-container-fluid" style="padding:10px">
+        <div style="margin-top: 30px;"></div>
+        <div class="good-trade">
+            <form action="/buy" method="POST">
+                <div class="am-container-fluid" style="">
+                    <div class="am-g ">
+                        <div class="am-u-sm-12 am-u-md-5 am-u-lg-2 trade-goodimg am-u-end" style="padding: 0px;text-align: center">
+                            <img src="{$list['goods_image']}" alt="">
+                        </div>
+                        <div class="am-u-sm-12 am-u-md-7 am-u-lg-3  am-u-end" style="">
+                            <!-- 网格开始 -->
+                            <input type="hidden" value="{$list['id']}" name="goods_id">
+                            <h2 style="margin-top: 0px;color: #333;font-family: 微软雅黑;" class="am-text-truncate">{$list['name']}</h2>
+                            <p class="trade-goodinfo" style="background-color:#f5f3ef;margin-top: 20px">
+                                <span style="color:#6c6c6c">促销：</span>
+                                <span class="trade-price" id="goods_price"><input type="hidden" name="price" value="{$list['goods_price']}">¥{$list['goods_price']}</span>
+                                <span style="float:right">
+                                    <span style="color: #6C6C6C;">累积销量：</span>
+                                    <span style="color:#6c6c6c;font-size:18px;">{$list['goods_sold']}</span>
+                                </span><br>
+                                <span style="color:#6C6C6C" id="kucun0">库存：{$list['goods_num']}件</span>
+                                <!--  <a id="lookpf" style="margin-left:5px;font-size:10px" href="javascript:;" onclick="lookpf()">查看批发价</a> -->
+                                <br><span style="color:#6c6c6c;">服务：自动发货 无忧售后</span>
+                            </p>
+                            <span style="color:#6c6c6c;margin-left:10px">数量：
+                                <input type="button" value="+" style="margin-right:-6px;" class="trade-input-count-button" onclick="countoper('jia')">
+                                <input type="text" class="trade-input-count" value="1" id="count" name="count">
+                                <input type="button" value="-" style="margin-left:-6px;" class="trade-input-count-button" onclick="countoper('jian')">
+                            </span>
+                            <br>
+                            <input type="hidden" value="353" id="kucun">
+                            <input type="hidden" id="maxsl" value="0">
+                            <button type="submit" class="am-btn am-btn-danger am-btn-xl am-square" id="paysubmit" style="margin-top:20px"><span class="am-icon-shopping-cart"></span>立即购买</button>
+                            <!-- 网格结束 -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="am-panel am-panel-default" style="border-radius:0px;margin-top: 10px">
+                <div class="am-panel-hd">商品描述</div>
+                <div class="am-panel-bd">
+                    <p background-color:#ffffff;"="" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-size: 15px; line-height: 30px; color: rgb(51, 51, 51); font-family: " segoe="" ui",="" "lucida="" grande" ,="" helvetica,="" arial,="" "microsoft="" yahei" ,="" "droid="" sans" ,="" "source="" han="" " hiragino="" sans="" gb",="" gb="" w3",="" fontawesome,="" sans-serif;="" white-space:="" normal;="" background-color:="" rgb(255,="" 255,="" 255);"=""><span style="color:#E53333;font-size:32px;"><strong>{$list["goods_content"]}</strong></span>
+                    </p>
+                </div>
+            </div>
+            <div class="am-panel am-panel-default" style="border-radius:0px;margin-top: 10px">
+                <div class="am-panel-hd">购买提示</div>
+                <div class="am-panel-bd">
+                    <p background-color:#ffffff;"= style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; font-size: 15px; line-height: 30px; color: rgb(51, 51, 51); font-family: " segoe="" ui",="" "lucida="" grande" ,="" helvetica,="" arial,="" "microsoft="" yahei" ,="" "droid="" sans" ,="" "source="" han="" " hiragino="" sans="" gb",="" gb="" w3",="" fontawesome,="" sans-serif;="" white-space:="" normal;="" background-color:="" rgb(255,="" 255,="" 255);"=""><span style="color:#E53333;font-size:32px;"><strong>{$site.tip}</strong></span>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+       {include file="layout/footer"}
+    </div>
+    <script>
+    $(function(){
+        if ({$list.goods_num}== 0){
+            $("#paysubmit").attr("class", 'am-btn am-btn-danger am-btn-xl am-disabled');
+            $("#paysubmit").attr("disabled", true);
+            $("#paysubmit").html("库存不足");
+       }
+   });
+
+    function countoper(oper){
+        count = $("#count").val();
+        if (oper == 'jia'){
+            count = parseInt(count) + 1;
+      }else{
+            count = parseInt(count) - 1;
+       }
+        if (parseInt(count) < 1){
+            count = 1;
+       }
+        if (parseInt(count) >={$list['goods_num']}){
+            count ={$list['goods_num']};
+       }
+        $("#count").val(count);
+   }
+
+    function checkout(){
+        alert($("#count").val())
+        alert({$list['goods_price']})
+        if ({$list['goods_num']}<= 0){
+            layer.alert("库存量不足")
+            return false
+       }
+        if ({$list['goods_price']}<= 0){
+            layer.alert("价格不能为0")
+            return false
+       }
+   }
+    </script>
+</body>
+
+</html>

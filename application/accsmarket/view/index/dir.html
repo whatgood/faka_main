@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>3213</title>
+</head>
+<body>
+	{$name}
+	{volist name='filenames' id='filename'}
+		<P><img src="static/images/excel.png" style="width: 15px">
+    	<span><a href="/file/{$filename}">{$filename}</a></span>
+        </P>
+	{/volist}
+	{volist name='dirnames' id='dirname'}
+		<p>
+			<div>
+				<img src="static/images/folder.png" style="width: 15px">
+				<span><a href="/compress/{$dirname}"></a></span>
+			</div>
+		</p>
+	{/volist}
+</body>
+</html>

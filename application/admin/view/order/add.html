@@ -1,0 +1,94 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Goods_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-goods_id" data-rule="required" data-source="goods/index" class="form-control selectpage" name="row[goods_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Goods_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-goods_type" class="form-control" name="row[goods_type]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Goods_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-goods_name" class="form-control" name="row[goods_name]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Goods_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-goods_price" class="form-control" step="0.01" name="row[goods_price]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Goods_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-goods_num" class="form-control" name="row[goods_num]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Goods_sum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-goods_sum" class="form-control" step="0.01" name="row[goods_sum]" type="number" value="0.00">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Goods_order')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-goods_order" class="form-control" name="row[goods_order]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Pay_type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-pay_type" class="form-control" name="row[pay_type]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Email')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-email" class="form-control" name="row[email]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Ip')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-ip" data-rule="required" class="form-control" name="row[ip]" type="text" value="没有记录">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Location')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-location" data-rule="required" class="form-control" name="row[location]" type="text" value="没有记录">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Statelist')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-statelist" class="form-control selectpicker" name="row[statelist]">
+                {foreach name="statelistList" item="vo"}
+                    <option value="{$key}" {in name="key" value="未付款"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Order_content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-order_content" class="form-control editor" rows="5" name="row[order_content]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

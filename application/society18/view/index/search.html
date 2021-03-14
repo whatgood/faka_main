@@ -1,0 +1,39 @@
+{include file='layout/head'/}
+<body>
+    {include file='layout/header'/}
+    <div class="am-container" style="padding:2px">
+        <div class="am-panel am-panel-default" style="margin:5px 0 5px 0;border-radius: 0px">
+        </div>
+        <div class="am-alert am-topbar-inverse am-alert-icon-sm" data-am-alert style="margin-top:10px">
+            <span class="am-icon-check-circle"></span>
+            <p>共有{$orders->total()}笔订单</p>
+        </div>
+        <header class="am-topbar-inverse" style="padding:15px;color:#">
+            <h3 class="am-panel-title" style="text-align:center">订单信息</h3>
+        </header>
+        {volist name='orders' id='order'}
+        <div class="am-panel am-topbar-inverse">
+            <ul class="am-list am-list-static" style="color:#3c3c3c">
+                <li>订单编号：{$order.goods_order}</li>
+                <li>商品名称：{$order.goods_name}</li>
+                <li>下单时间：{$order.createtime}</li>
+                <li>订单价格：{$order.goods_sum}元</li>
+                <li>购买数量：{$order.goods_num}件</li>
+                <li>联系方式：{$order.email}</li>
+                <li>支付类型：支付宝</li>
+                <li>发卡状态：已发卡</li>
+                <li>订单状态：<span style="color:green">{$order.statelist}</span></li>
+                <a style="width:100%;font-weight: bold" href="/back/out_trade_no/{$order.goods_order}" target="_blank">
+                    <li style="text-align: center;color: #fff;padding:10px" class="am-topbar-inverse">查看卡密</li>
+                </a>
+            </ul>
+        </div>
+        {/volist}
+        <div id="page" align="center"></div>
+        <hr>
+        <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-6 am-thumbnails" style="margin-top:10px">
+        </ul>
+        {include file='layout/footer'/}
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{include file='layout/head'/}
+<body>
+    <div class="main-wrapper">
+        {include file='layout/header'/}
+        <!-- 头部信息 -->
+        <section class="soc-category" id="content">
+            <div class="container">
+                <div class="flex">
+                    {volist name="categorys" id="v"}
+                    <div class="soc-bl">
+                        <div id="soc_title_10" class="soc-title" data-help="Softreg are accounts that are automatically registered by a special program">
+                            <h2 class="soc-name" data-id="10"><a href="/en/catalog/facebook/avtoregi">{$v.nickname}</a></h2>
+                            <p class="soc-qty">商品库存</p>
+                            <p class="soc-cost-label"></p>
+                            <p class="soc-cost">商品价格</p>
+                            <p class="soc-control"></p>
+                        </div>
+                        {volist name=":goods_list($v.id)" id="vo"}
+                        <div class="socs">
+                            <div class="soc-body">
+                                <div class="soc-img">
+                                    <img src="{$vo.image?$vo.image:$v.image}" alt=""> </div>
+                                <div class="soc-text">
+                                    <p>
+                                        <a href="{:url('/',['id'=>$vo.id])}" alt=''>{$vo.name}</a>
+                                    </p>
+                                </div>
+                                <div class="soc-qty">{$vo.goods_num} 个.</div>
+                                <div class="soc-cost-label">每个商品价格</div>
+                                <div class="soc-cost">{$vo.goods_price}元</div>
+                                <div class="soc-cell">
+                                    <button type="button" class="basket-button" onclick="trade({$vo.id})">
+                                        <img src="/template/accsmarket/picture/ic-basket.png" alt=""><span>购买</span>
+                                    </button>
+                                    <script type="text/javascript">
+                                        function trade(id){
+                                          location.href='/trade/id/'+id
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        {/volist}
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </section>
+        {include file="layout/footer"}
+    </div>
+</body>
+</html>

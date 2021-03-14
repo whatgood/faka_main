@@ -1,0 +1,132 @@
+{include file='layout/head'/}
+<body>
+    {include file='layout/header'/}
+    <div class="am-container" style="padding:2px">
+        <div class="am-panel am-panel-default" style="margin:5px 0 5px 0;border-radius: 0px">
+            <div class="am-panel-bd liebiaocatname">
+                <p>
+                    <span style="color:#E53333;font-size:32px;"><span><span> </span></span></span>
+                </p>
+                <ul style="font-size:14px;text-align:center;font-family:PingFangSC, &quot;">
+                    {$site.announcement}
+                </ul>
+            </div>
+        </div>
+        <div class="good-trade">
+            <form action="/pay" method="POST" onsubmit="return checkform()">
+                <div class="am-container">
+                    <div class="am-g ">
+                        <div class="am-u-sm-12 am-u-md-5 am-u-lg-5 trade-goodimg am-u-end" style="padding: 0px;text-align: center">
+                            <img src="{$goods.image?$goods.image:$goods.category_image}" class="am-img-responsive am-radius am-img-thumbnail" alt="{$goods['name']}"></div>
+                        <div class="am-u-sm-12 am-u-md-7 am-u-lg-7  am-u-end" style="">
+                            <div class="am-scrollable-horizontal">
+                                <table class="am-table am-table-bordered am-table-striped">
+                                    <tr>
+                                        <input type="hidden" value="{$goods['id']}" name="goods_id" />
+                                        <input type="hidden" value="{$goods['category_id']}" name="category_id" />
+                                        <input type="hidden" value="{$goods.name}" name="name" />
+                                        <input type="hidden" value="{$goods.goods_price}" name="goods_price" />
+                                        <td colspan="2" class="am-text-middle" style="color: #333;font-size:16px;">{$goods.name}</td>
+                                    </tr>
+                                    <tr class="am-text-nowrap">
+                                        <td rowspan="1" class="am-text-middle">商品价格：</td>
+                                        <td style="color:#E53333;font-size:20px;">¥{$goods.goods_price}元</td>
+                                    </tr>
+                                    <tr>
+                                        <td>商品销量：</td>
+                                        <td>{$goods.goods_sold}件</td>
+                                    </tr>
+                                    <tr>
+                                        <td>商品库存：</td>
+                                        <td>{$goods.goods_num}件</td>
+                                    </tr>
+                               <!--      <tr>
+                                        <td>商品批发：</td>
+                                        <td style="color:#E53333;">
+                                            满5件65.00元/件;满10件60.00元/件; </td>
+                                    </tr> -->
+                                    <tr>
+                                        <td>售后服务：</td>
+                                        <td>自动发货 无忧售后</td>
+                                    </tr>
+                                    <tr>
+                                        <td>发卡数量：</td>
+                                        <td>买1件发1件</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="1" class="am-text-middle">购买数量：</td>
+                                        <td>
+                                            <input type="button" value="+" style="margin-right:-6px" class="trade-input-count-button" onclick="countoper('jia')" />
+                                            <input type="text" class="trade-input-count" value="1" id="count" name="goods_num" />
+                                            <input type="button" value="-" style="margin-left:-6px" class="trade-input-count-button" onclick="countoper('jian')" /></td>
+                                            <script type="text/javascript">
+                                                function countoper(caozuo){
+                                                    if (caozuo=='jia') {
+                                                        count=Number($('#count').val())
+                                                        kucun=Number('{$goods.goods_num}')
+                                                        if (count<kucun) {
+                                                            $('#count').val(count+1)
+                                                        }
+                                                    }
+                                                    if (caozuo=='jian') {
+                                                       count=Number($('#count').val())
+                                                       kucun=1
+                                                       if (count>kucun) {
+                                                           $('#count').val(count-1)
+                                                       }
+                                                    }
+                                                }
+                                            </script>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="1" class="am-text-middle">联系方式：</td>
+                                        <td><input style="padding: 0.5em;font-size: 1rem;line-height: 1.2;color: #333;" type="text" value="" name="email" id="email" maxlength='50' placeholder="填写邮箱作为查询凭证" required="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>付款方式：</td>
+                                        <td> <input type="radio" name="type" value="alipay" title="支付宝" checked=""> 支付宝
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <input type="hidden" value="17" id="kucun">
+                            <div class="am-u-sm-12 am-u-md-7 am-u-lg-7  am-u-end" style="text-align: center">
+                                <button type="submit" class="button button2" style="margin-top:10px"><span class="am-icon-shopping-cart">
+                                    </span> 立即购买</button>
+                                    <script type="text/javascript">
+                                        function checkform(){
+                                            email=$('#email').val()
+                                            count=Number($('#count').val())
+                                            kucun=Number('{$goods.goods_num}')
+                                            var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+                                            if (!reg.test(email)) {
+                                                alert('邮件格式不正确');
+                                                return false
+                                            }
+                                            if (count>kucun) {
+                                                alert('购买数量不得大于库存数量');
+                                                return false
+                                            }
+                                            return true;
+                                        }
+                                    </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </form>
+        <div class="am-panel am-panel-default" style="border-radius:0px;margin-top: 10px">
+            <div class="am-panel-hd" align="center">商品描述</div>
+            <div class="am-panel-bd">
+               {$goods["goods_content"]}
+            </div>
+        </div>
+        <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-6 am-thumbnails" style="margin-top:10px">
+        </ul>
+        {include file='layout/footer'/}
+    </div>
+    <script data-cfasync="false" src="/template/society18/js/email-decode.min.js"></script>
+</body>
+
+</html>

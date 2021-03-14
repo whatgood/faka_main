@@ -1,0 +1,129 @@
+{include file="layout/head"}
+
+<body>
+    {include file="layout/header"}
+    <div class="am-container-fluid" style="padding:2px">
+        <form action="/pay" method="post" onsubmit="return checkform()" style="background-color:#fff;padding:4px">
+            <div class="am-panel am-panel-default">
+                <div class="am-panel-hd">确认订单信息</div>
+                <div class="am-panel-bd">
+                    <ul class="am-list am-list-static">
+                        <input type="hidden" name="goods_id" value="{$list['id']}">
+                        <input type="hidden" name="category_id" value="{$list['category_id']}">
+                        <li class="am-text-truncate">商品名称：{$list['name']}</li><input type="hidden" value="{$list['name']}" name="name">
+                        <li>商品单价：{$list['goods_price']}元/件</li>
+                        <input type="hidden" name="goods_price" value="{$list['goods_price']}">
+                        <li>购买数量：{$list['goods_count']}件</li><input type="hidden" value="{$list['goods_count']}" name="goods_num">
+                        <input type="hidden" name="goods_num" value="{$list['goods_count']}">
+                        <!-- <li>优惠券码：<a style="color:#6c6c6c;display:inline;" href="#" id="youhuiquan" onclick="youhuiquan()">点此输入优惠券码</a></li> <input type="hidden" id="input-yhq" value="" name="input-yhq"> -->
+                        <li>联系方式：<input style="padding: 0.5em;font-size: 1rem;line-height: 1.2;color: #333;" type="text" name="email" id="email" minlength="5" placeholder="请填写邮箱" required /></li>
+                    </ul>
+                    <span style="color:red">温馨提示：请填写邮箱,用这个邮箱可以查询到你的订单</span>
+                </div>
+            </div>
+            <div class="am-form-group">
+                <div style="margin-left: 6px">
+                    <h3>选择支付方式</h3>
+                </div>
+                <div class="am-container-fluid">
+                    <div class="am-g">
+                        <div class="text-area-star">
+                            <div class="am-u-sm-12 am-u-md-2 am-u-lg-2 am-u-end" style="padding:5px">
+                                <label style="padding:5px"><svg class="icon" aria-hidden="true" style="width:100%;height:100%;">
+                                        <use xlink:href="#icon-zhifubaozhifu"></use>
+                                    </svg><input type="radio" name="type" value="alipay" /><span></span></label>
+                            </div>
+                            <div class="am-u-sm-12 am-u-md-2 am-u-lg-2 am-u-end" style="padding:5px;">
+                                <div style="border:1px solid #ccc;height:50px;line-height: 50px;color:#ccc">微信支付维护</div>
+                            </div>
+                            <div class="am-u-sm-12 am-u-md-2 am-u-lg-2 am-u-end" style="padding:5px;">
+                                <div style="border:1px solid #ccc;height:50px;line-height: 50px;color:#ccc">QQ钱包维护</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div style=" text-align: right;">
+                <button type="submit" class="am-btn am-btn-danger am-btn-xl" style="width: 100%">立即付款</button>
+            </div>
+        </form>
+        <div style="margin-bottom: 360px"></div>
+        {include file="layout/footer"}
+    </div>
+    <script>
+    function youhuiquan() {
+        layer.prompt({ title: '请输入优惠券代码', formType: 3 }, function(youhuiquan, index) {
+            $.ajax({
+                type: "POST",
+                url: "/index/getDiscounInfo.html",
+                data: 'quanma=' + youhuiquan,
+                success: function(data) {
+                    if (data) {
+                        $("#input-yhq").val(youhuiquan);
+                        if (data.type == '金额券') {
+                            $("#youhuiquan").html('满' + data.condition + '元优惠' + data.discount + '元');
+                        } else {
+                            lidu = data.discount * 10;
+                            $("#youhuiquan").html('满' + data.condition + '元打' + lidu + '折优惠')
+                        }
+                    } else {
+                        layer.msg('优惠券不存在或已被使用');
+                    }
+                }
+            });
+            //此处获取优惠券信息
+            layer.close(index);
+        });
+    }
+
+    function checkform() {
+        var email = $("#email").val();
+        console.log(email)
+        var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+        if (!reg.test(email)) {
+            layer.alert('邮件格式不正确', { icon: 2 });
+            return false
+        }
+        if (!email) {
+            layer.alert('请输入联系方式', { icon: 2 });
+            return false;
+        } else if (email.indexOf(" ") != -1) {
+            layer.alert('邮件中不得含空格', { icon: 2 });
+            return false;
+        }
+        if (email.length < 5) {
+            layer.alert('联系方式长度至少5个字符', { icon: 2 });
+            return false;
+        }
+        if (escape(email).indexOf("%u") >= 0) {
+            layer.alert('联系方式不得含有中文', { icon: 2 });
+            return false;
+        }
+        var count = $("#count").val();
+        var kucun = $("#kucun").val();
+        count = parseInt(count);
+        kucun = parseInt(kucun);
+        if (count > kucun) {
+            layer.alert('购买数量大于库存量', { icon: 2 });
+            return false;
+        }
+        if (!$("label").hasClass("red")) {
+            layer.alert('请选择支付方式!', { icon: 2 });
+            return false;
+        }
+    }
+    $('.text-area-star label').click(function() {
+        var labelLength = $('.text-area-star label').length;
+        for (var i = 0; i < labelLength; i++) {
+            if (this == $('.text-area-star label').get(i)) {
+                $('.text-area-star label').eq(i).addClass('red');
+            } else {
+                $('.text-area-star label').eq(i).removeClass('red');
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

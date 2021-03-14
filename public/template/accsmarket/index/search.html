@@ -1,0 +1,54 @@
+{include file="layout/head"}
+
+<body>
+    {include file="layout/header"}
+    <div class="am-container-fluid" style="padding:5px">
+        <div class="am-alert am-topbar-inverse am-alert-icon-sm" data-am-alert style="margin-top:10px">
+            <span class="am-icon-check-circle"></span>
+            <p>共查询到{$list->total()}笔订单</p>
+        </div>
+        {volist name="list" id="vo"}
+        <div class="am-panel am-topbar-inverse">
+            <div class="am-panel-hd am-topbar-inverse">
+                <h3 class="am-panel-title">订单号：{$vo.goods_order}</h3>
+            </div>
+            <ul class="am-list am-list-static" style="color:#3c3c3c">
+                <li>商品名称：{$vo.goods_name}</li>
+                <li>下单时间：{$vo.createtime}</li>
+                <li>订单价格：{$vo.goods_sum}</li>
+                <li>购买数量：{$vo.goods_num}</li>
+                {if ($vo.statelist=="已付款")}
+                <li>订单状态：
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-yifukuan"></use>
+                    </svg>{$vo.statelist}
+                </li>
+                <a style="width:100%;font-weight: bold" href="/back/out_trade_no/{$vo.goods_order}">
+                    <li style="text-align: center;color: #fff;padding:10px" class="am-topbar-inverse">查看详情</li>
+                </a>
+                {else/}
+                <li>订单状态：
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-chaoshiweifukuan"></use>
+                    </svg>未付款
+                </li>
+                <a style="width:100%;font-weight: bold" href="/back/out_trade_no/{$vo.goods_order}">
+                    <li style="text-align: center;color: #fff;padding:10px" class="am-topbar-inverse">刷新状态</li>
+                </a>
+                {/if}
+            </ul>
+        </div>
+        {/volist}
+        <div class="am-fl">
+            {$list->render()}
+        </div>
+        <div style="margin-top:100px"></div>
+        <div data-am-page="{pages:6,theme:'success',jump:'/search.html?ddid=694567688@qq.com&page=%page%',curr:1}"></div>
+        <script type="text/javascript" src="static/js/amazeui.page.js"></script>
+        <br>
+        {include file="layout/footer"}
+    </div>
+    </div>
+</body>
+
+</html>

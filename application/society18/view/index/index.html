@@ -1,0 +1,60 @@
+{include file='layout/head'/}
+<body>
+    {include file='layout/header'/}
+    <div class="am-container" style="padding:2px">
+        <div class="am-panel am-panel-default" style="margin:5px 0 5px 0;border-radius: 0px">
+            <div class="am-panel-bd liebiaocatname">
+                <p>
+                    <span style="color:#E53333;font-size:32px;"><span><span> </span></span></span>
+                </p>
+                <ul style="font-family:PingFangSC, &quot;font-size:14px;">
+                    {$site.announcement}
+                </ul>
+                <p>
+                    <span style="color:#FFFFFF;"></span>
+                </p>
+            </div>
+        </div>
+        <div class="goods">
+            <div class="am-show-landscape">
+                <table class="am-table " style="background-color:#fff;font-size:15px;border:#ccc solid 1px">
+                    <thead>
+                        <tr class="thhead">
+                            <th style="text-align: center">商品名称</th>
+                            <th style="text-align: center;width: 10%">商品单价</th>
+                            <th style="text-align: center;width: 10%">商品库存</th>
+                            <th style="text-align:center;width: 10%">商品操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {volist name="categorys" id="v"}
+                        <tr>
+                            <th colspan="5" class="liebiaocatname" style="text-align:center;font-size: 16px;"><b>{$v.nickname}</b></th>
+                        </tr>
+                        {volist name=":goods_list($v.id)" id="vo"}
+                        <tr>
+                            <td>
+                                <a href="/trade/1.html">{$vo.name}</a>
+                            </td>
+                            <td style="text-align: center"><span style="font-size:13px;color:red">¥{$vo.goods_price}</span></td>
+                            <td style="text-align: center">
+                                {$vo.goods_num==0?'<span style="color: #ccc">缺货</span>':$vo.goods_num}件
+                            </td>
+                            <td style="text-align:center">
+                                <a href="{:url('/trade',['id'=>$vo.id])}" class="am-btn button"><span class="am-icon-shopping-cart"></span> 购买</a>
+                            </td>
+                        </tr>
+                        {/volist}
+                        {/volist}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-6 am-thumbnails" style="margin-top:50px">
+        </ul>
+        {include file='layout/footer'/}
+    </div>
+    <script data-cfasync="false" src="/template/society18/js/email-decode.min.js"></script>
+</body>
+
+</html>

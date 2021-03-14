@@ -1,0 +1,53 @@
+{include file='layout/head'/}
+<body>
+    {include file='layout/header'/}
+    <div class="am-container" style="padding:2px">
+        <div class="am-panel am-panel-default" style="margin:5px 0 5px 0;border-radius: 0px">
+            <div class="am-panel-bd liebiaocatname">
+                {$site.announcement}
+            </div>
+        </div>
+        <header class="am-topbar-inverse" style="padding:15px;color:#">
+            <h3 class="am-panel-title" style="text-align:center">订单查询</h3>
+        </header>
+        <div class="am-container" style="padding:10px">
+            <form action="/search" method="get" onsubmit="return searchbtn()">
+                <div class="am-u-lg-12">
+                    <div class="am-input-group">
+                        <span class="am-input-group-label" style="color:black">查询订单</span>
+                        <input type="text" class="am-form-field" name="out_trade_no" value="" id="out_trade_no" placeholder="请输入邮箱/订单号的任意一项" required />
+                    </div>
+                    <div style="text-align:center">
+                        <button type="submit" class="am-btn am-btn-success" style="width:10%;margin-top: 5px">立即查询</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr />
+        <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-6 am-thumbnails" style="margin-top:10px">
+        </ul>
+        {include file='layout/footer'/}
+    </div>
+</body>
+
+</html>
+<script>
+function searchbtn() {
+    var number = /^\d{10,16}$/;
+    var email = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+    var out_trade_no = $('#out_trade_no').val()
+    var is_number = number.test(out_trade_no);
+    var is_email = email.test(out_trade_no);
+    console.log(out_trade_no)
+    if (is_number) {
+        window.location.href = '/search/order/' + out_trade_no;
+        return false
+    } else if (is_email) {
+        window.location.href = '/search/email/' + out_trade_no;
+        return false
+    } else {
+        layer.alert("格式不正确")
+        return false
+    }
+}
+</script>

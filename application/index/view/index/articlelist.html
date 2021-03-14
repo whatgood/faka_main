@@ -1,0 +1,26 @@
+{include file="layout/head"}
+{include file="layout/header"}
+<div class="am-container-fluid" style="padding: 20px">
+    <div class="am-g">
+        <div class="am-u-lg-12">
+            <ul class="am-list">
+                {volist name="list" id="vo"}
+                <li>
+                    <a href="{:url('index/index/article',['id'=>$vo.id])}">{$vo.name}&nbsp;</a>
+                </li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="am-g">
+            <div class="am-u-lg-12">
+                <div class="am-fl" style="padding:20px">
+                    {$list->render()}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="tongji" style="margin-top: 320px">
+     {include file="layout/footer"}
+    </div>
+</html>

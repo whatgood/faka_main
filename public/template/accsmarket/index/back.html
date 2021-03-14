@@ -1,0 +1,76 @@
+{include file="layout/head"}
+<script src="/static/js/clipboard.min.js"></script>
+
+<body>
+    {include file="layout/header"}
+    <div class="am-container-fluid" style="padding:2px">
+        <section class="am-panel" style="margin-top:5px;margin-bottom: 5px;border: #ccc 1px solid">
+            <header class="am-topbar-inverse" style="padding:15px;color:#">
+                <h3 class="am-panel-title" style="text-align:center">订单信息</h3>
+            </header>
+            <div class="am-panel-bd">
+                <ul class="am-list am-list-static">
+                    <li class="am-text-truncate">订单编号：{$list.goods_order}</li>
+                    <li class="am-text-truncate">商品名称：{$list.goods_name}</li>
+                    <li>下单时间：{$list.createtime}</li>
+                    <li>支付金额：¥{$list.goods_sum}元</li>
+                    <li>购买数量：{$list.goods_num}件</li>
+                    <li>联系方式：{$list.email}</li>
+                    <li>发卡状态：已发卡</li>
+                    <li>支付方式：
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhifubao"></use>
+                        </svg>{$list.goods_name="alipay"?"支付宝":"微信"}</li>
+                    <li>订单状态：
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yifukuan"></use>
+                        </svg>{$list.statelist} </li>
+                </ul>
+            </div>
+        </section>
+        <section class="am-panel" style="margin-top:5px;margin-bottom: 5px;border: #ccc 1px solid;">
+            <header class="am-topbar-inverse" style="padding:15px;color:#3c3c3c">
+                <h3 class="am-panel-title" style="text-align:center;color: #fff">
+                    卡密信息，如果显示空白请点击"<a  style="color:white" href="javascript:location.reload();">刷新</a>"或者联系客服
+                </h3>
+            </header>
+            <div class="am-panel-bd" style="font-weight:bold;" id="target">
+                {if condition="$list"}
+                {volist name="list['order_content']" id="vo" }
+                {$vo}<br>
+                {/volist}
+                {/if}
+                <div style="text-align:right;padding: 10px">
+                    <a class="am-btn am-topbar-inverse" style="color:#fff" href="{:url('/down',['out_trade_no'=>$list.goods_order])}">导出</a>
+                    <button class="am-btn am-topbar-inverse" data-clipboard-action="copy" data-clipboard-target="#target" id="copy_btn" onclick="copyUrl()">
+                        复制
+                    </button>
+                    <a class="am-btn am-topbar-inverse" style="color:#fff" href="javascript:location.reload();">刷新</a>
+                </div>
+        </section>
+        {include file="layout/footer"}
+    </div>
+    <script type="text/javascript">
+    function copyUrl() {
+        var div = document.getElementById("target");
+        if (document.body.createTextRange) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(div);
+            range.select();
+        } else if (window.getSelection) {
+            var selection = window.getSelection();
+            var range = document.createRange();
+            range.selectNodeContents(div);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        } else {
+            console.warn("none");
+        }
+        document.execCommand("Copy"); // 执行浏览器复制命令
+
+        alert("已复制好，可贴粘。");
+    }
+    </script>
+</body>
+
+</html>

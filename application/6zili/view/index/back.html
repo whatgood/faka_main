@@ -1,0 +1,26 @@
+{include file='layout/head'/}
+<body>
+    <div class="main-wrapper">
+        {include file='layout/header'/}
+        <section class="soc-category" id="content">
+            <div class="container">
+                <div class="flex">
+                    <div class="soc-bl">
+                        <div id="soc_title_10" class="soc-title" data-help="Softreg are accounts that are automatically registered by a special program">
+                            <h2 class="soc-name" data-id="10"><a href="/en/catalog/facebook/avtoregi">订单编号：{$list.goods_order}</a></h2>
+                        </div>
+                        <div class="socs">
+                            <div class="soc-body" style="word-break:break-all" >
+                                {volist name="list['order_content']" id="vo" }
+                                    {$vo}<br>
+                                {/volist}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {include file="layout/footer"}
+    </div>
+</body>
+</html>

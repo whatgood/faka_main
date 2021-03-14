@@ -1,0 +1,110 @@
+{include file="layout/head"}
+{include file="layout/header"}
+<div class="am-container-fluid">
+    <div class="am-g">
+        <div class="am-u-lg-12">
+            <div class="am-u-lg-9">
+                <div class="am-panel am-show-landscape" style="margin:5px 0 5px 0;border-radius: 0px">
+                    <table class="am-table am-table-bordered am-table-radius am-table-hover " style="background-color:#fff;font-size:15px;border:#ccc solid 1px">
+                        <thead>
+                            <tr class="thhead">
+                                <th style="text-align: left;"><b>商品标题</b></th>
+                                <th style="text-align: center;width: 10%"><b>单价</b></th>
+                                <th style="text-align: center;width: 10%"><b>库存</b></th>
+                                <th style="text-align:center"><b>操作</b></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {volist name="list" id="v"}
+                            <tr>
+                                <th colspan="4" class="liebiaocatname" style="text-align:center;font-size: 16px;background-color: #fff"><b>{$v.nickname}--购买请看<a href="/shouhou" style="color: red">售后说明</a>！</b></th>
+                            </tr>
+                            {volist name=":goods_list($v.id)" id="vo"}
+                            <tr style="text-align: left">
+                                <td><img src="{$v.image}" width="35px" height="35px" style="margin-right: 10px"><b>{$vo.name}</b>&nbsp;<span class="am-badge am-round">自动发货</span></td>
+                                <td style="text-align: center"><span style="font-size:13px;color:red;">¥{$vo.goods_price}</span></td>
+                                <td style="text-align: center">
+                                    {$vo.goods_num==0?'<span style="color: #ccc">缺货</span>':$vo.goods_num."件"}
+                                </td>
+                                <td style="text-align:center">
+                                    <a href="{:url('/trade',['id'=>$vo.id])}" class="am-btn am-btn-danger am-btn-sm">
+                                        <span class="am-icon-shopping-cart"></span> 购买</a>
+                                </td>
+                            </tr>
+                            {/volist}
+                            {/volist}
+                            <tr>
+                                <th colspan="4" class="liebiaocatname" style="text-align:center;font-size: 16px;"><b>不同意售后说明的请勿购买</b></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="am-u-lg-3  am-show-landscape">
+                <div class="am-panel-bd liebiaocatname">
+                    {$site.announcement}
+                </div>
+            </div>
+        </div>
+        <!-- 手机样式------------------------------------------------------------------------------------------------ -->
+        <div class="am-show-portrait">
+            <ul class="am-avg-sm-4 am-avg-md-4 am-avg-lg-4 am-thumbnails" style="text-align:center;margin-top: 10px;">
+                <li><a href="javascript:searchbtn();"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xingzhuanggongnengtubiao-"></use>
+                        </svg><br>订单查询</a></li>
+                <li><a href="tencent://message/?uin=472751848&Site=&Menu=yes" target="_blank"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-icon_kefu"></use>
+                        </svg><br>在线QQ</a></li>
+                <li><a href="/index/index/ArticleList"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-bangzhuyufankui"></use>
+                        </svg><br>教程文章</a></li>
+                <li><a href="/shouhou"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-jihuachulizhong"></use>
+                        </svg><br>售后说明</a></li>
+            </ul>
+        </div>
+        <div class="am-panel am-show-portrait" style="margin:5px 0 5px 0;border-radius: 0px">
+            <div class="am-panel-bd liebiaocatname">
+                {$site.announcement}
+            </div>
+        </div>
+        <div class="am-show-portrait">
+            <div class="am-container">
+                <div class="am-g">
+                    {volist name="list" id="v"}
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12" style="padding:1px">
+                        <div class="wapcatname" style="padding: 1px;text-align: center;">{$v.nickname}--购买请看<a href="/shouhou">售后说明</a>！</div>
+                    </div>
+                    {volist name=":goods_list($v.id)" id="vo"}
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12" style="border-bottom: #ccc 1px dashed">
+                        <div style="background-color: #fff;height: 65px">
+                            <div style="padding:0px">
+                                <a href="{:url('/trade',['id'=>$vo.id])}" style="color: #3c3c3c;">
+                                    <img class="am-radius" alt="{$vo.name}" src="{:find_category_img($vo.category_id)}" width="60" height="60" style="float: left" />
+                                    <div class="index-goodname-xq" style="height:38px;color:#333;">
+                                        <p title="{$vo.name}" style="margin-left:5px;font-size: 10px">{$vo.name}</p>
+                                    </div>
+                                    <div class="am-text-truncate" style="margin-left: 15px;">
+                                        <div style="">
+                                            <span class="am-badge am-badge-primary" style="margin-left: 5px">库存({$vo.goods_num==0?'<span style="color: #ccc">缺货</span>':$vo.goods_num."件"})</span>
+                                            <span class="am-badge am-badge-danger">销量({$vo.goods_sold})</span>
+                                            <span style="color: #ff0000">
+                                                <b>¥{$vo.goods_price}</b>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {/volist}
+                    {/volist}
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    {include file="layout/footer"}
+</div>
+
+</html>

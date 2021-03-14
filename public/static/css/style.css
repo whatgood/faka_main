@@ -1,0 +1,161 @@
+ .gonggao{
+       margin-top: 5px;
+       text-align: center;
+   }
+   .goods{
+       margin-top: 10px;
+   }
+   .good-trade{
+       background-color: #fff;
+   }
+   .good-trade p{
+        font-size: 15px;
+         line-height: 30px;  
+   }
+  
+   @media screen and (max-width:550px){
+            .searchdiv{
+                display:none;
+            }
+            .searchdiv2{
+                display:inline
+            }
+            .index-goodimg{
+             height:190px;
+            }
+            .trade-goodimg img{
+                /* display:none; */
+                width: 200px;
+                height: 200px;
+            }
+        }
+    @media screen and (min-width:550px){
+        .searchdiv{
+            display:inline;
+        }
+        .searchdiv2{
+            display:none;
+        }
+        .index-goodimg{
+             height:280px;
+         }
+         .trade-goodimg img{
+            /* display:inline */
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .index-good{
+        padding:10px;background-color:#fff
+    }
+    .price{
+       font-size: 18px;
+       color: #F40;
+       font-weight: 700;
+       /* text-align:left */
+    }
+    .pr-info{
+        margin-top: 10px
+    }
+    .pr-xl{
+       color:#888;
+       float: right;
+    }
+    .index-goodname{
+    text-align:center;
+    font-size:15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    }
+    .index-goodname-xq{
+    font-weight: 400;
+    margin-top: 5px;
+    font-size:15px;
+    word-wrap:break-word;  
+    word-break:break-all;  
+    overflow: hidden;
+    height:40px
+    }
+   
+    .trade-goodname{
+        font-size:20px;color:#3C3C3C;
+    }
+    .trade-goodinfo{
+        background-color:#FFF2E8;padding:10px;
+        margin-bottom: 5px;
+    }
+    .trade-price{
+        color:#F40;;font-size: 26px;font-weight: 700;
+    }
+    .trade-input{
+        text-align:center;height:20px;width:50px;border: 1px solid #e6e6e6;border-radius: 2px;padding:5px
+    }
+    .trade-email{
+        height:20px;width:150px;border: 1px solid #e6e6e6;border-radius: 2px;padding:5px
+    }
+    .tongji{
+        text-align:center;
+        font-size: 15px;
+        padding:20px;
+      }
+      .tongji a{
+       color: #3C3C3C;
+      }
+    .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+            font-size: 25px
+    }
+ .text-area-star {
+        overflow: hidden;
+        text-align: center;
+    }
+    .text-area-star label {
+        float: left;
+        line-height: 50x;
+        height: 50px;
+        width:100%;
+        font-size: 12px;
+        margin: 0px 10px 10px 0px;
+        padding: 0px 5px 0px 5px;
+        cursor: pointer;
+        border: 1px solid #ebebeb;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    .red {
+        color: red;
+        border: 2px solid red !important;
+    }
+    .text-area-star label input {
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        opacity: 0;
+        position: absolute;
+    }
+    .text-area-star label span {
+        padding: 10px 10px 10px 10px;
+        position: relative;
+    }
+    .trade-input-count{
+        width:50px;
+        height: 35px;
+        text-align: center;
+        border: 1px solid #ccc;
+        outline:none;
+        border-radius: 0px
+    }
+    .trade-input-count-button{
+        width:25px;
+        height: 35px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        color: #3c3c3c;
+        outline:none;
+        border-radius: 0px
+    }

@@ -1,0 +1,47 @@
+ @media screen and (min-width:321px) and (max-width:375px) {
+     html {
+         font-size: 11px
+     }
+ }
+
+ .red {
+     color: red
+ }
+
+ .green {
+     color: green
+ }
+
+ ;
+
+ .yellow {
+     color: blue
+ }
+
+ body {
+     background-color: #eeeeee;
+ }
+
+ .area {
+     margin-top: 10px;
+     background: white;
+     border-radius: 3px;
+     text-align: center;
+ }
+
+ .ticket-bd {
+     background: radial-gradient(circle, #eeeeee, #eeeeee 50%, white 50%, white 100%) -9px -8px / 16px 16px repeat-x;
+     height: 8px;
+
+     .scan {
+         width: 60px;
+         height: 100%;
+         display: inline-block;
+         background-size: 220%;
+         background-position: 96px -126px;
+     }
+
+     .icon {
+         background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANYAAAEwCAMAAAD8V383AAAC91BMV鈥Dc8vnoAGj3hpKYNRbQwmMemsogVFvDSUw6q2hBIaptwCzcCd5TOrQXQAAAABJRU5ErkJggg==);
+     }
+ }
