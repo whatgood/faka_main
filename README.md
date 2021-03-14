@@ -1,1 +1,1 @@
-invalid refspechttps://github.com/whatgood/faka_main.git 配置文件
+这个是发卡网的正式版本
