@@ -10,28 +10,30 @@
                             <tr class="thhead">
                                 <th style="text-align: left;"><b>商品标题</b></th>
                                 <th style="text-align: center;width: 10%"><b>单价</b></th>
+                                <th style="text-align: center;width: 10%"><b>销量</b></th>
                                 <th style="text-align: center;width: 10%"><b>库存</b></th>
                                 <th style="text-align:center"><b>操作</b></th>
                             </tr>
                         </thead>
                         <tbody>
-                            {volist name="list" id="v"}
+                            {volist name="categories" id="category"}
                             <tr>
-                                <th colspan="4" class="liebiaocatname" style="text-align:center;font-size: 16px;background-color: #fff"><b>{$v.nickname}--购买请看<a href="/shouhou" style="color: red">售后说明</a>！</b></th>
+                                <th colspan="4" class="liebiaocatname" style="text-align:center;font-size: 16px;background-color: #fff"><b>{$category.name}--购买请看<a href="/shouhou" style="color: red">售后说明</a>！</b></th>
                             </tr>
-                            {volist name=":goods_list($v.id)" id="vo"}
-                            <tr style="text-align: left">
-                                <td><img src="{$v.image}" width="35px" height="35px" style="margin-right: 10px"><b>{$vo.name}</b>&nbsp;<span class="am-badge am-round">自动发货</span></td>
-                                <td style="text-align: center"><span style="font-size:13px;color:red;">¥{$vo.goods_price}</span></td>
-                                <td style="text-align: center">
-                                    {$vo.goods_num==0?'<span style="color: #ccc">缺货</span>':$vo.goods_num."件"}
-                                </td>
-                                <td style="text-align:center">
-                                    <a href="{:url('/trade',['id'=>$vo.id])}" class="am-btn am-btn-danger am-btn-sm">
-                                        <span class="am-icon-shopping-cart"></span> 购买</a>
-                                </td>
-                            </tr>
-                            {/volist}
+                                {volist name="category->goods" id="goods"}
+                                <tr style="text-align: left">
+                                    <td><img src="{$goods.image}" width="35px" height="35px" style="margin-right: 10px"><b>{$goods.name}</b>&nbsp;<span class="am-badge am-round">自动发货</span></td>
+                                    <td style="text-align: center"><span style="font-size:13px;color:red;">¥{$goods.goods_price}</span></td>
+                                    <td style="text-align: center"><span >{$goods.goods_sold}件</span></td>
+                                    <td style="text-align: center">
+                                        {$goods.goods_num==0?'<span style="color: #ccc">缺货</span>':$goods.goods_num."件"}
+                                    </td>
+                                    <td style="text-align:center">
+                                        <a href="/trade/{$goods.id}" class="am-btn am-btn-danger am-btn-sm">
+                                            <span class="am-icon-shopping-cart"></span> 购买</a>
+                                    </td>
+                                </tr>
+                                {/volist}
                             {/volist}
                             <tr>
                                 <th colspan="4" class="liebiaocatname" style="text-align:center;font-size: 16px;"><b>不同意售后说明的请勿购买</b></th>
@@ -71,25 +73,25 @@
         <div class="am-show-portrait">
             <div class="am-container">
                 <div class="am-g">
-                    {volist name="list" id="v"}
+                    {volist name="categories" id="category"}
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12" style="padding:1px">
-                        <div class="wapcatname" style="padding: 1px;text-align: center;">{$v.nickname}--购买请看<a href="/shouhou">售后说明</a>！</div>
+                        <div class="wapcatname" style="padding: 1px;text-align: center;">{$category.name}--购买请看<a href="/shouhou">售后说明</a>！</div>
                     </div>
-                    {volist name=":goods_list($v.id)" id="vo"}
+                    {volist name="category->goods" id="goods"}
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-12" style="border-bottom: #ccc 1px dashed">
                         <div style="background-color: #fff;height: 65px">
                             <div style="padding:0px">
-                                <a href="{:url('/trade',['id'=>$vo.id])}" style="color: #3c3c3c;">
-                                    <img class="am-radius" alt="{$vo.name}" src="{:find_category_img($vo.category_id)}" width="60" height="60" style="float: left" />
+                                <a href="{:url('/trade',['id'=>$goods.id])}" style="color: #3c3c3c;">
+                                    <img class="am-radius" alt="{$goods.image}" src="{$goods.image}" width="60" height="60" style="float: left" />
                                     <div class="index-goodname-xq" style="height:38px;color:#333;">
-                                        <p title="{$vo.name}" style="margin-left:5px;font-size: 10px">{$vo.name}</p>
+                                        <p title="{$goods.name}" style="margin-left:5px;font-size: 10px">{$goods.name}</p>
                                     </div>
                                     <div class="am-text-truncate" style="margin-left: 15px;">
                                         <div style="">
-                                            <span class="am-badge am-badge-primary" style="margin-left: 5px">库存({$vo.goods_num==0?'<span style="color: #ccc">缺货</span>':$vo.goods_num."件"})</span>
-                                            <span class="am-badge am-badge-danger">销量({$vo.goods_sold})</span>
+                                            <span class="am-badge am-badge-primary" style="margin-left: 5px">库存({$goods.goods_num==0?'<span style="color: #ccc">缺货</span>':$goods.goods_num."件"})</span>
+                                            <span class="am-badge am-badge-danger">销量({$goods.goods_sold})</span>
                                             <span style="color: #ff0000">
-                                                <b>¥{$vo.goods_price}</b>
+                                                <b>¥{$goods.goods_price}</b>
                                             </span>
                                         </div>
                                     </div>
@@ -106,5 +108,4 @@
     </div>
     {include file="layout/footer"}
 </div>
-
 </html>

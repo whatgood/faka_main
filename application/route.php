@@ -10,19 +10,17 @@
 // +----------------------------------------------------------------------
 use think\Request;
 return [
-    'home'=>'index/index',
-    'back1'=>'index/back1',
-    'search_pre'=>'index/searchPre',
-    "trade"=>"index/trade",
+    'home/[:id]'=>'index/index',
+    "trade/[:id]"=>"index/trade",
     "buy"=>"index/buy",
     "check"=>"index/check",
     "pay"=>"index/pay",
-    'jump'=>'index/jump',
     "notify"=>"index/notify",
     "state"=>"index/state",
     "back"=>"index/back",
     "down"=>"index/down",
     "query"=>"index/query",
+    'search_pre'=>'index/searchPre',
     "search"=>"index/search",
     "shouhou"=>"index/shouhou",
     "content"=>"index/content",

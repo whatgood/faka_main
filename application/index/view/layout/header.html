@@ -19,14 +19,14 @@
                     </a>
                     <ul class="am-dropdown-content am-topbar-inverse">
                         {volist name=':all_category()' id='category'}
-                        <li><a href="/home/category_id/{$category.id}">{$category.name}</a></li>
+                        <li><a href="/home/{$category.id}">{$category.name}</a></li>
                         {/volist}
                     </ul>
                 </li>
             </ul>
             <ul class="am-nav am-nav-pills am-topbar-nav  am-show-portrait">
                 {volist name=':all_category()' id='category'}
-                    <li><a href="/home/category_id/{$category.id}">{$category.name}</a></li>
+                    <li><a href="/home/{$category.id}">{$category.name}</a></li>
                 {/volist}
             </ul>
         </div>

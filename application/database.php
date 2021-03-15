@@ -18,11 +18,11 @@ return [
     // 服务器地址
     'hostname'        => Env::get('database.hostname', '127.0.0.1'),
     // 数据库名
-    'database'        => Env::get('database.database', 'xingyuntx'),
+    'database'        => Env::get('database.database', 'main'),
     // 用户名
-    'username'        => Env::get('database.username', 'xingyuntx'),
+    'username'        => Env::get('database.username', 'main'),
     // 密码
-    'password'        => Env::get('database.password', 'Ai2010ni21'),
+    'password'        => Env::get('database.password', 'main'),
     // 端口
     'hostport'        => Env::get('database.hostport', ''),
     // 连接dsn
@@ -46,7 +46,7 @@ return [
     // 是否严格检查字段是否存在
     'fields_strict'   => true,
     // 数据集返回类型
-    'resultset_type'  => 'array',
+    'resultset_type'  => '\think\Collection',
     // 自动写入时间戳字段
     'auto_timestamp'  => false,
     // 时间字段取出后的默认时间格式,默认为Y-m-d H:i:s
