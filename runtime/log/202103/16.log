@@ -1,0 +1,817 @@
+---------------------------------------------------------------
+[ 2021-03-16T10:46:39+08:00 ] 127.0.0.1 GET main.com/home
+[运行时间：0.227997s] [吞吐率：4.39req/s] [内存消耗：3,862.64kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006716s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006308s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'dnt' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.005337s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004312s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.013955s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`image` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000722s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.013505s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '40' [ RunTime:0.000796s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '19' [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '39' [ RunTime:0.000428s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '15' [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '18' [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '38' [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000300s ]
+---------------------------------------------------------------
+[ 2021-03-16T10:46:39+08:00 ] 127.0.0.1 GET main.com/
+[运行时间：0.227998s] [吞吐率：4.39req/s] [内存消耗：3,857.64kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006686s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.006882s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'dnt' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.004022s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004305s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.013972s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`image` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.013697s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '40' [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '19' [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '39' [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '15' [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '18' [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '38' [ RunTime:0.000442s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000381s ]
+---------------------------------------------------------------
+[ 2021-03-16T10:46:39+08:00 ] 127.0.0.1 GET main.com/uploads/20210215/5c669e548f573ae3f6e523c7d2b1f35c.jpg
+[运行时间：0.050106s] [吞吐率：19.96req/s] [内存消耗：1,964.12kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001729s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20210215',
+    2 => '5c669e548f573ae3f6e523c7d2b1f35c.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-03-16T10:46:39+08:00 ] 127.0.0.1 GET main.com/uploads/20210215/5c669e548f573ae3f6e523c7d2b1f35c.jpg
+[运行时间：0.041231s] [吞吐率：24.25req/s] [内存消耗：1,964.12kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000021s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001802s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20210215',
+    2 => '5c669e548f573ae3f6e523c7d2b1f35c.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-03-16T10:49:49+08:00 ] 127.0.0.1 GET main.com/home
+[运行时间：0.139854s] [吞吐率：7.15req/s] [内存消耗：3,863.21kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000029s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.003304s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'dnt' => '1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002890s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009956s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.009868s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`image` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.008513s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '40' [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '19' [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '39' [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '15' [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '18' [ RunTime:0.000363s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '38' [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000282s ]
+---------------------------------------------------------------
+[ 2021-03-16T10:49:49+08:00 ] 127.0.0.1 GET main.com/uploads/20210215/5c669e548f573ae3f6e523c7d2b1f35c.jpg
+[运行时间：0.046466s] [吞吐率：21.52req/s] [内存消耗：1,964.12kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000024s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001985s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20210215',
+    2 => '5c669e548f573ae3f6e523c7d2b1f35c.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-03-16T18:02:25+08:00 ] 127.0.0.1 GET main.com/
+[运行时间：0.670552s] [吞吐率：1.49req/s] [内存消耗：3,857.65kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000034s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.015116s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'dnt' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.013559s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001334s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.011205s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`image` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.012411s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '40' [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '19' [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '39' [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '15' [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '18' [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '38' [ RunTime:0.000250s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000235s ]
+---------------------------------------------------------------
+[ 2021-03-16T18:02:26+08:00 ] 127.0.0.1 GET main.com/uploads/20210215/5c669e548f573ae3f6e523c7d2b1f35c.jpg
+[运行时间：0.066424s] [吞吐率：15.05req/s] [内存消耗：1,964.12kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000023s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001880s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20210215',
+    2 => '5c669e548f573ae3f6e523c7d2b1f35c.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-03-16T18:02:35+08:00 ] 127.0.0.1 GET main.com/home
+[运行时间：0.122043s] [吞吐率：8.19req/s] [内存消耗：3,863.21kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000025s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002171s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'dnt' => '1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002212s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010252s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.016073s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`image` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.013020s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '40' [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '19' [ RunTime:0.000385s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '39' [ RunTime:0.000388s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '15' [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '18' [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '38' [ RunTime:0.000538s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000294s ]
+---------------------------------------------------------------
+[ 2021-03-16T18:02:35+08:00 ] 127.0.0.1 GET main.com/uploads/20210215/5c669e548f573ae3f6e523c7d2b1f35c.jpg
+[运行时间：0.047313s] [吞吐率：21.14req/s] [内存消耗：1,964.12kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000025s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.001983s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20210215',
+    2 => '5c669e548f573ae3f6e523c7d2b1f35c.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-03-16T18:02:49+08:00 ] 127.0.0.1 GET main.com/home
+[运行时间：0.120725s] [吞吐率：8.28req/s] [内存消耗：3,863.21kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000023s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002306s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'dnt' => '1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002132s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010368s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.016141s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`image` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.011608s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '40' [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '19' [ RunTime:0.000351s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '39' [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '15' [ RunTime:0.000334s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '18' [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '38' [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000360s ]
+---------------------------------------------------------------
+[ 2021-03-16T18:02:49+08:00 ] 127.0.0.1 GET main.com/uploads/20210215/5c669e548f573ae3f6e523c7d2b1f35c.jpg
+[运行时间：0.047150s] [吞吐率：21.21req/s] [内存消耗：1,964.12kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000030s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002053s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20210215',
+    2 => '5c669e548f573ae3f6e523c7d2b1f35c.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-03-16T18:02:50+08:00 ] 127.0.0.1 GET main.com/articlelist
+[运行时间：0.189195s] [吞吐率：5.29req/s] [内存消耗：3,777.81kb] [文件加载：134]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000023s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002256s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'articlelist',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'dnt' => '1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002353s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->articlelist[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\articlelist.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'category',
+  4 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010666s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.016044s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_category` WHERE  `type` = 'article' [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_article` [ RunTime:0.032666s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `facebook_article` LIMIT 1 [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_article` ORDER BY `createtime` DESC LIMIT 0,9 [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000530s ]
+---------------------------------------------------------------
+[ 2021-03-16T18:02:52+08:00 ] 127.0.0.1 GET main.com/home
+[运行时间：0.119226s] [吞吐率：8.39req/s] [内存消耗：3,863.23kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000023s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002061s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/articlelist',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'dnt' => '1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002104s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009934s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.016009s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`image` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.011734s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '40' [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '19' [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '39' [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '15' [ RunTime:0.000437s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '18' [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '38' [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000442s ]
+---------------------------------------------------------------
+[ 2021-03-16T18:02:52+08:00 ] 127.0.0.1 GET main.com/uploads/20210215/5c669e548f573ae3f6e523c7d2b1f35c.jpg
+[运行时间：0.048012s] [吞吐率：20.83req/s] [内存消耗：1,964.12kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000024s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002087s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20210215',
+    2 => '5c669e548f573ae3f6e523c7d2b1f35c.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-03-16T18:03:31+08:00 ] 127.0.0.1 GET main.com/articlelist
+[运行时间：0.118939s] [吞吐率：8.41req/s] [内存消耗：3,777.81kb] [文件加载：134]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000024s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002159s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'articlelist',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'dnt' => '1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002063s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->articlelist[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\articlelist.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'category',
+  4 => 'list',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010145s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.015940s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_category` WHERE  `type` = 'article' [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_article` [ RunTime:0.015647s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `facebook_article` LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_article` ORDER BY `createtime` DESC LIMIT 0,9 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000309s ]
+---------------------------------------------------------------
+[ 2021-03-16T18:03:32+08:00 ] 127.0.0.1 GET main.com/home
+[运行时间：0.101036s] [吞吐率：9.90req/s] [内存消耗：3,863.23kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000023s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002429s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/articlelist',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'dnt' => '1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002147s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'categories',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.010964s ]
+[ sql ] [ SQL ] SELECT `id`,`name`,`image` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000424s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.009004s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '40' [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '19' [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '39' [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '15' [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '18' [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `category_id` = '38' [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000287s ]
+---------------------------------------------------------------
+[ 2021-03-16T18:03:32+08:00 ] 127.0.0.1 GET main.com/uploads/20210215/5c669e548f573ae3f6e523c7d2b1f35c.jpg
+[运行时间：0.045592s] [吞吐率：21.93req/s] [内存消耗：1,964.12kb] [文件加载：106]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000023s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002187s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'uploads',
+    1 => '20210215',
+    2 => '5c669e548f573ae3f6e523c7d2b1f35c.jpg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+  'dnt' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-03-16T18:03:46+08:00 ] 127.0.0.1 GET main.com/trade/326
+[运行时间：0.140203s] [吞吐率：7.13req/s] [内存消耗：3,769.16kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000024s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.002084s ]
+[ info ] [ LANG ] F:\web\main.com\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => NULL,
+    1 => 'index',
+    2 => 'trade',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://main.com/home',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
+  'dnt' => '1',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'main.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '326',
+)
+[ info ] [ LANG ] F:\web\main.com\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.002065s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LANG ] F:\web\main.com\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->trade[ F:\web\main.com\application\index\controller\Index.php ]
+[ info ] [ VIEW ] F:\web\main.com\public/../application/index\view\index\trade.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+  3 => 'goods',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010815s ] mysql:host=127.0.0.1;dbname=main;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_goods` [ RunTime:0.013421s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_goods` WHERE  `id` = 326 LIMIT 1 [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `facebook_category` [ RunTime:0.012696s ]
+[ sql ] [ SQL ] SELECT * FROM `facebook_category` WHERE  `id` = 40 LIMIT 1 [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SELECT `id`,`name` FROM `facebook_category` WHERE  `type` = 'goods' ORDER BY `weigh` DESC [ RunTime:0.000348s ]

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"F:\web\main.com\public/../application/index\view\index\trade.html";i:1615776887;s:55:"F:\web\main.com\application\index\view\layout\head.html";i:1611974398;s:57:"F:\web\main.com\application\index\view\layout\header.html";i:1615736035;s:57:"F:\web\main.com\application\index\view\layout\footer.html";i:1612071342;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"F:\web\main.com\public/../application/index\view\index\trade.html";i:1615814432;s:55:"F:\web\main.com\application\index\view\layout\head.html";i:1611974398;s:57:"F:\web\main.com\application\index\view\layout\header.html";i:1615736035;s:57:"F:\web\main.com\application\index\view\layout\footer.html";i:1612071342;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -189,33 +189,20 @@ function searchbtn() {
    });
 
     function countoper(oper){
-        count = $("#count").val();
-        if (oper == 'jia'){
+      count = $("#count").val();
+      if (oper == 'jia'){
             count = parseInt(count) + 1;
       }else{
             count = parseInt(count) - 1;
-       }
-        if (parseInt(count) < 1){
+      }
+      if (parseInt(count) < 1){
             count = 1;
-       }
-        if (parseInt(count) >=<?php echo $goods['goods_num']; ?>){
+      }
+      if (parseInt(count) >=<?php echo $goods['goods_num']; ?>){
             count =<?php echo $goods['goods_num']; ?>;
-       }
+      }
         $("#count").val(count);
-   }
-
-    function checkout(){
-        alert($("#count").val())
-        alert(<?php echo $goods['goods_price']; ?>)
-        if (<?php echo $goods['goods_num']; ?><= 0){
-            layer.alert("库存量不足")
-            return false
-       }
-        if (<?php echo $goods['goods_price']; ?><= 0){
-            layer.alert("价格不能为0")
-            return false
-       }
-   }
+    }
     </script>
 </body>
 

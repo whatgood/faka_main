@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"F:\web\main.com\public/../application/index\view\index\index.html";i:1615805369;s:55:"F:\web\main.com\application\index\view\layout\head.html";i:1611974398;s:57:"F:\web\main.com\application\index\view\layout\header.html";i:1615736035;s:57:"F:\web\main.com\application\index\view\layout\footer.html";i:1612071342;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"F:\web\main.com\public/../application/index\view\index\index.html";i:1615805496;s:55:"F:\web\main.com\application\index\view\layout\head.html";i:1611974398;s:57:"F:\web\main.com\application\index\view\layout\header.html";i:1615736035;s:57:"F:\web\main.com\application\index\view\layout\footer.html";i:1612071342;}*/ ?>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -228,5 +228,4 @@ function searchbtn() {
     </div>
 </div>
 </div>
-
 </html>
